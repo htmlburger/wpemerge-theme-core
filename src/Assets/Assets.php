@@ -6,13 +6,6 @@ use Theme\Path;
 
 class Assets {
 	/**
-	 * Bundle manifest.
-	 *
-	 * @var array|null
-	 */
-	protected static $manifest = null;
-
-	/**
 	 * Remove the protocol from an http/https url.
 	 *
 	 * @param  string $url
@@ -76,28 +69,6 @@ class Assets {
 		$template_uri = get_template_directory_uri();
 		$template_uri = preg_replace( '~/' . preg_quote( WPMT_THEME_DIR_NAME, '~' ) . '/?$~', '', $template_uri );
 		return $template_uri;
-	}
-
-	/**
-	 * Get the path to a versioned bundle relative to the theme directory.
-	 *
-	 * @param  string $path Asset path.
-	 * @return string
-	 */
-	public function getBundlePath( $path ) {
-		if ( is_null( static::$manifest ) ) {
-			$manifest_path = Path::normalize( WPMT_ASSETS_MANIFEST_PATH );
-
-			if ( file_exists( $manifest_path ) ) {
-				static::$manifest = json_decode( file_get_contents( $manifest_path ), true );
-			} else {
-				static::$manifest = array();
-			}
-		}
-
-		$path = isset( static::$manifest[ $path ] ) ? static::$manifest[ $path ] : $path;
-
-		return '/' . WPMT_DIST_DIR_NAME . '/' . $path;
 	}
 
 	/**

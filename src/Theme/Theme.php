@@ -43,25 +43,12 @@ class Theme {
 	}
 
 	/**
-	 * Throw an exception if the theme has not been booted.
-	 *
-	 * @throws Exception
-	 * @return void
-	 */
-	protected function verifyBoot() {
-		if ( ! $this->isBooted() ) {
-			throw new Exception( static::class . ' must be booted first.' );
-		}
-	}
-
-	/**
 	 * Bootstrap WPEmerge.
 	 *
+	 * @param  array $config
 	 * @return void
 	 */
-	protected function bootFramework() {
-		$config = require_once WPMT_APP_DIR . 'config.php';
-
+	protected function bootFramework( $config ) {
 		if ( ! isset( $config['providers'] ) ) {
 			$config['providers'] = [];
 		}
@@ -72,8 +59,6 @@ class Theme {
 		);
 
 		WPEmerge::boot( $config );
-
-		require_once WPMT_APP_DIR . 'routes.php';
 	}
 
 	/**
@@ -90,40 +75,11 @@ class Theme {
 
 		do_action( 'wpemerge_theme.booting' );
 
-		$this->globRequire( WPEMERGETHEME_HELPERS_DIR . '*.php' );
-
 		$this->bootFramework( $config );
-
-		add_action( 'after_setup_theme', 'wpmt_boot_textdomain',    22 );
-		add_action( 'after_setup_theme', 'wpmt_boot_helpers',       24 );
-		add_action( 'after_setup_theme', 'wpmt_boot_hooks',         26 );
-		add_action( 'after_setup_theme', 'wpmt_boot_theme_support', 28 );
-		add_action( 'after_setup_theme', 'wpmt_boot_menus',         30 );
-		add_action( 'init',              'wpmt_boot_content_types', 0  );
-		add_action( 'widgets_init',      'wpmt_boot_widgets',       10 );
-		add_action( 'widgets_init',      'wpmt_boot_sidebars',      10 );
 
 		$this->booted = true;
 
 		do_action( 'wpemerge_theme.booted' );
-	}
-
-	/**
-	 * Require all files matching a glob once.
-	 *
-	 * @param  string  $glob
-	 * @param  boolean $once
-	 * @return void
-	 */
-	public function globRequire( $glob, $once = true ) {
-		$includes = glob( $glob );
-		foreach ( $includes as $include ) {
-			if ( $once ) {
-				require_once $include;
-			} else {
-				require $include;
-			}
-		}
 	}
 
 	/**
