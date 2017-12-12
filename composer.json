@@ -1,0 +1,34 @@
+{
+	"name": "htmlburger/wpemerge-theme-core",
+	"description": "Core tools for the WPEmerge Theme.",
+	"type": "library",
+	"keywords": [],
+	"homepage": "https://wpemerge.com/",
+	"license": "GPL-2.0",
+	"authors": [
+		{
+            "name": "htmlBurger",
+            "email": "info@htmlburger.com",
+            "homepage": "http://htmlburger.com/",
+            "role": "Developer"
+        },
+        {
+            "name": "Atanas Angelov",
+            "email": "atanas.angelov.dev@gmail.com",
+            "homepage": "https://github.com/atanas-angelov-dev/",
+            "role": "Developer"
+        }
+	],
+	"require": {
+		"htmlburger/wpemerge": "^0.7@dev"
+	},
+	"autoload": {
+		"psr-4": {
+			"WPEmergeTheme\\": "src/"
+		},
+        "files": [
+            "config.php",
+            "src/load.php"
+        ]
+	}
+}
