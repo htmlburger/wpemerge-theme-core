@@ -74,7 +74,7 @@ class Assets {
 	 */
 	public function getThemeUri() {
 		$template_uri = get_template_directory_uri();
-		$template_uri = preg_replace( '~/theme/?$~', '', $template_uri );
+		$template_uri = preg_replace( '~/' . preg_quote( WPMT_THEME_DIR_NAME, '~' ) . '/?$~', '', $template_uri );
 		return $template_uri;
 	}
 
@@ -86,7 +86,7 @@ class Assets {
 	 */
 	public function getBundlePath( $path ) {
 		if ( is_null( static::$manifest ) ) {
-			$manifest_path = Path::normalize( WPMT_THEME_DIR . 'dist/manifest.json' );
+			$manifest_path = Path::normalize( WPMT_ASSETS_MANIFEST_PATH );
 
 			if ( file_exists( $manifest_path ) ) {
 				static::$manifest = json_decode( file_get_contents( $manifest_path ), true );
@@ -97,7 +97,7 @@ class Assets {
 
 		$path = isset( static::$manifest[ $path ] ) ? static::$manifest[ $path ] : $path;
 
-		return '/dist/' . $path;
+		return '/' . WPMT_DIST_DIR_NAME . '/' . $path;
 	}
 
 	/**
@@ -139,7 +139,7 @@ class Assets {
 
 		# Theme and favicon URI
 		$theme_uri = $this->getThemeUri();
-		$favicon_uri = apply_filters( 'wpmt_theme_favicon_uri', $theme_uri . '/dist/images/favicon.ico' );
+		$favicon_uri = apply_filters( 'wpmt_favicon_uri', $theme_uri . '/' . WPMT_DIST_DIR_NAME . '/images/favicon.ico' );
 
 		# Determine version based on file modified time.
 		# If the $version is false, the file does not exist

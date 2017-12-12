@@ -5,7 +5,7 @@
  * @return void
  */
 function wpmt_boot_textdomain() {
-	load_theme_textdomain( 'wmpt', WPMT_THEME_DIR . 'languages' );
+	load_theme_textdomain( 'wmpt', WPMT_DIR . 'languages' );
 }
 
 /**
@@ -14,7 +14,7 @@ function wpmt_boot_textdomain() {
  * @return void
  */
 function wpmt_boot_helpers() {
-	WPEmergeTheme::globRequire( WPMT_THEME_APP_DIR . 'helpers' . DIRECTORY_SEPARATOR . '*.php' );
+	WPEmergeTheme::globRequire( WPMT_APP_DIR . 'helpers' . DIRECTORY_SEPARATOR . '*.php' );
 }
 
 /**
@@ -23,7 +23,7 @@ function wpmt_boot_helpers() {
  * @return void
  */
 function wpmt_boot_hooks() {
-	require_once WPMT_THEME_APP_DIR . 'hooks.php';
+	require_once WPMT_APP_DIR . 'hooks.php';
 }
 
 /**
@@ -32,7 +32,7 @@ function wpmt_boot_hooks() {
  * @return void
  */
 function wpmt_boot_theme_support() {
-	require_once WPMT_THEME_APP_SETUP_DIR . 'theme-support.php';
+	require_once WPMT_APP_SETUP_DIR . 'theme-support.php';
 }
 
 /**
@@ -41,7 +41,7 @@ function wpmt_boot_theme_support() {
  * @return void
  */
 function wpmt_boot_menus() {
-	require_once WPMT_THEME_APP_SETUP_DIR . 'menus.php';
+	require_once WPMT_APP_SETUP_DIR . 'menus.php';
 }
 
 /**
@@ -50,8 +50,8 @@ function wpmt_boot_menus() {
  * @return void
  */
 function wpmt_boot_content_types() {
-	require_once WPMT_THEME_APP_SETUP_DIR . 'post-types.php';
-	require_once WPMT_THEME_APP_SETUP_DIR . 'taxonomies.php';
+	require_once WPMT_APP_SETUP_DIR . 'post-types.php';
+	require_once WPMT_APP_SETUP_DIR . 'taxonomies.php';
 }
 
 /**
@@ -60,7 +60,7 @@ function wpmt_boot_content_types() {
  * @return void
  */
 function wpmt_boot_widgets() {
-	require_once WPMT_THEME_APP_SETUP_DIR . 'widgets.php';
+	require_once WPMT_APP_SETUP_DIR . 'widgets.php';
 }
 
 /**
@@ -69,5 +69,5 @@ function wpmt_boot_widgets() {
  * @return void
  */
 function wpmt_boot_sidebars() {
-	require_once WPMT_THEME_APP_SETUP_DIR . 'sidebars.php';
+	require_once WPMT_APP_SETUP_DIR . 'sidebars.php';
 }

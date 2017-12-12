@@ -60,7 +60,7 @@ class Theme {
 	 * @return void
 	 */
 	protected function bootFramework() {
-		$config = require_once WPMT_THEME_APP_DIR . 'config.php';
+		$config = require_once WPMT_APP_DIR . 'config.php';
 
 		if ( ! isset( $config['providers'] ) ) {
 			$config['providers'] = [];
@@ -73,7 +73,7 @@ class Theme {
 
 		WPEmerge::boot( $config );
 
-		require_once WPMT_THEME_APP_DIR . 'routes.php';
+		require_once WPMT_APP_DIR . 'routes.php';
 	}
 
 	/**
