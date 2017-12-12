@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "830b4740fc365b3c90a1b68923367fe7",
+    "content-hash": "66a6fc1b086f6b9440863671a8c51a31",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -441,7 +441,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "htmlburger/wpemerge": 20
+        "htmlburger/wpemerge": 10
     },
     "prefer-stable": false,
     "prefer-lowest": false,
