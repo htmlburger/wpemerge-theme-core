@@ -3,6 +3,7 @@
 namespace WPEmergeTheme\Theme;
 
 use WPEmerge;
+use WPEmerge\Helpers\Mixed;
 use WPEmergeTheme\Assets\AssetsServiceProvider;
 use WPEmergeTheme\Avatar\AvatarServiceProvider;
 use WPEmergeTheme\Image\ImageServiceProvider;
@@ -62,7 +63,7 @@ class Theme {
 	}
 
 	/**
-	 * Boot the theme.
+	 * Bootstrap the theme.
 	 *
 	 * @param  array     $config
 	 * @throws Exception
@@ -83,7 +84,8 @@ class Theme {
 	}
 
 	/**
-	 * Render a template partial.
+	 * Render a template partial using wpm_partial().
+	 * Interface matches get_template_part() with the addition of $context.
 	 *
 	 * @param  string $partial
 	 * @param  string $child
@@ -105,17 +107,6 @@ class Theme {
 
 		$templates[] = "partials/${partial}.php";
 
-		$templates = apply_filters( 'wpemerge_theme.view.partial.templates', $templates, $partial, $child, $context );
-		$template = locate_template( $templates, false );
-
-		if ( ! $template ) {
-			return;
-		}
-
-		$renderer = function( $__template, $__context ) {
-			extract( $__context );
-			require $__template;
-		};
-		$renderer( $template, $context );
+		wpm_partial( $templates, $context );
 	}
 }
