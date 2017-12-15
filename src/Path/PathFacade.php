@@ -10,7 +10,7 @@ use WPEmerge\Support\Facade;
  * @codeCoverageIgnore
  */
 class PathFacade extends Facade {
-    protected static function getFacadeAccessor() {
-        return 'wpemerge_theme.path.path';
-    }
+	protected static function getFacadeAccessor() {
+		return 'wpemerge_theme.path.path';
+	}
 }
