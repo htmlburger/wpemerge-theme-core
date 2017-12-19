@@ -109,4 +109,14 @@ class Theme {
 
 		wpm_partial( $templates, $context );
 	}
+
+	/**
+	 * Alias of WPEmergeTheme\Assets\Assets::getThemeUri
+	 *
+	 * @see WPEmergeTheme\Assets\Assets::getThemeUri
+	 * @return string
+	 */
+	public function uri() {
+		return \Theme\Assets::getThemeUri();
+	}
 }
