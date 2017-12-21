@@ -5,9 +5,11 @@ build:
   nodes:
     analysis:
       project_setup:
-        override: true
+        override:
+          - 'true'
       tests:
-        override: [php-scrutinizer-run]
+        override:
+          - 'true'
 
 checks:
   php: true
