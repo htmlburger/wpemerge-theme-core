@@ -49,14 +49,12 @@ class Assets {
 				$src
 			);
 
-			# Check if the given file really exists
 			if ( file_exists( $file_path ) ) {
 				# Use the last modified time of the file as a version
 				$version = filemtime( $file_path );
 			}
 		}
 
-		# Return version
 		return $version;
 	}
 
