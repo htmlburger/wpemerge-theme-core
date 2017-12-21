@@ -19,6 +19,7 @@ class Assets {
 	 * Get if a url is external or not.
 	 *
 	 * @param  string  $url
+	 * @param  string  $home_url
 	 * @return boolean
 	 */
 	protected function isExternalUrl( $url, $home_url ) {
