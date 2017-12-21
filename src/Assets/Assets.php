@@ -2,8 +2,6 @@
 
 namespace WPEmergeTheme\Assets;
 
-use Theme\Path;
-
 class Assets {
 	/**
 	 * Remove the protocol from an http/https url.
