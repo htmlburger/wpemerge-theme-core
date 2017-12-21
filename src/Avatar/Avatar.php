@@ -160,10 +160,13 @@ class Avatar {
 
 		$id = $this->idOrEmailToId( $id_or_email );
 
-		if ( ! is_numeric( $id ) ) {
-			return $url;
+		if ( is_numeric( $id ) ) {
+			$filtered_url = $this->getAvatarUrl( $id, $this->getSize( $args ) );
+			if ( $filtered_url !== null ) {
+				$url = $filtered_url;
+			}
 		}
 
-		return $this->getAvatarUrl( $id, $this->getSize( $args ) );
+		return $url;
 	}
 }
