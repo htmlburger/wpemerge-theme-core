@@ -84,7 +84,7 @@ class Avatar {
 	 * Returns a size (name or [widget, height]) for the given avatar arguments.
 	 *
 	 * @param  array            $arguments
-	 * @return string|integer[]
+	 * @return integer[]|string
 	 */
 	protected function getSize( $arguments ) {
 		$size = 'full';
@@ -122,6 +122,26 @@ class Avatar {
 	}
 
 	/**
+	 * Get avatar url
+	 *
+	 * @param  integer          $id
+	 * @param  integer[]|string $size
+	 * @return string|null
+	 */
+	protected function getAvatarUrl( $id, $size ) {
+		$attachments_fallback_chain = $this->getAttachmentFallbackChain( $id );
+
+		foreach ( $attachments_fallback_chain as $attachment_id ) {
+			$image = wp_get_attachment_image_src( $attachment_id, $size );
+			if ( ! empty( $image ) ) {
+				return $image[0];
+			}
+		}
+
+		return null;
+	}
+
+	/**
 	 * Filter an avatar url based on the default avatar attachment id and registered meta keys.
 	 *
 	 * @param  string         $url
@@ -144,17 +164,6 @@ class Avatar {
 			return $url;
 		}
 
-		$size = $this->getSize( $args );
-		$attachments_fallback_chain = $this->getAttachmentFallbackChain( $id );
-
-		foreach ( $attachments_fallback_chain as $attachment_id ) {
-			$image = wp_get_attachment_image_src( $attachment_id, $size );
-			if ( ! empty( $image ) ) {
-				$url = $image[0];
-				break;
-			}
-		}
-
-		return $url;
+		return $this->getAvatarUrl( $id, $this->getSize( $args ) );
 	}
 }
