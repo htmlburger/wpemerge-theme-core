@@ -67,17 +67,17 @@ class Avatar {
 	 */
 	protected function idOrEmailToId( $id_or_email ) {
 		if ( is_a( $id_or_email, WP_Comment::class ) ) {
-			return $id_or_email->user_id;
+			return intval( $id_or_email->user_id );
 		}
 
 		if ( ! is_numeric( $id_or_email ) ) {
 			$user = get_user_by( 'email', $id_or_email );
 			if ( $user ) {
-				return $user->ID;
+				return intval( $user->ID );
 			}
 		}
 
-		return $id_or_email;
+		return strval( $id_or_email );
 	}
 
 	/**
@@ -89,10 +89,10 @@ class Avatar {
 	protected function getSize( $arguments ) {
 		$size = 'full';
 
-		if ( ! empty( $args['width'] ) && ! empty( $args['height'] ) ) {
-			$size = array( $args['width'], $args['height'] );
-		} elseif ( ! empty( $args['size'] ) ) {
-			$size = array( $args['size'], $args['size'] );
+		if ( ! empty( $arguments['width'] ) && ! empty( $arguments['height'] ) ) {
+			$size = [ intval( $arguments['width'] ), intval( $arguments['height'] ) ];
+		} elseif ( ! empty( $arguments['size'] ) ) {
+			$size = [ intval( $arguments['size'] ), intval( $arguments['size'] ) ];
 		}
 
 		return $size;
@@ -105,7 +105,7 @@ class Avatar {
 	 * @return integer[]
 	 */
 	protected function getAttachmentFallbackChain( $user_id ) {
-		$chain = array();
+		$chain = [];
 
 		foreach ( $this->avatar_user_meta_keys as $user_meta_key ) {
 			$attachment_id = get_user_meta( $user_id, $user_meta_key, true );
