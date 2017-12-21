@@ -29,6 +29,6 @@ class Sidebar {
 			$sidebar = 'default-sidebar';
 		}
 
-		dynamic_sidebar( $sidebar );
+		return $sidebar;
 	}
 }
