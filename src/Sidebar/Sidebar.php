@@ -13,7 +13,7 @@ class Sidebar {
 		$page_id = 0;
 		$sidebar = '';
 
-		if (is_page()) {
+		if ( is_page() ) {
 			$page_id = get_the_ID();
 		} elseif ( is_home() || is_archive() || is_search() || ( is_single() && get_post_type() === 'post' ) ) {
 			$page_id = intval( get_option( 'page_for_posts' ) );
