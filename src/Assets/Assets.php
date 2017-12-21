@@ -23,16 +23,16 @@ class Assets {
 	 */
 	protected function isExternalUrl( $url, $home_url ) {
 		$delimiter = '~';
-		$regex_quoted_home_url = preg_quote( $home_url, $delimiter );
-		$regex = $delimiter . '^' . $regex_quoted_home_url . $delimiter . 'i';
+		$regex_home_url = preg_quote( $home_url, $delimiter );
+		$regex = $delimiter . '^' . $regex_home_url . $delimiter . 'i';
 		return ! preg_match( $regex, $url );
 	}
 
 	/**
 	 * Generate a version for a given asset src.
 	 *
-	 * @param  string $src
-	 * @return string
+	 * @param  string          $src
+	 * @return integer|boolean
 	 */
 	protected function generateFileVersion( $src ) {
 		// Normalize both URLs in order to avoid problems with http, https
@@ -117,8 +117,7 @@ class Assets {
 		$version = $this->generateFileVersion( $favicon_uri );
 
 		# Display the favicon only if it exists
-		if ( $version ) {
-
+		if ( $version !== false ) {
 			# Add the version string to the favicon URI
 			$favicon_uri = add_query_arg( 'ver', $version, $favicon_uri );
 
