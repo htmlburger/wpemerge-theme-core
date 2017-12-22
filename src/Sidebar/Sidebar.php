@@ -19,7 +19,7 @@ class Sidebar {
 			$page_id = intval( get_option( 'page_for_posts' ) );
 		}
 
-		$page_id = apply_filters( 'wpmt_sidebar_context_page_id', $page_id );
+		$page_id = apply_filters( 'app_sidebar_context_page_id', $page_id );
 
 		if ( $page_id ) {
 			$sidebar = get_post_meta( $page_id, $meta_key );

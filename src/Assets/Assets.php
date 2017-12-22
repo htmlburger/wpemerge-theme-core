@@ -64,7 +64,7 @@ class Assets {
 	 */
 	public function getThemeUri() {
 		$template_uri = get_template_directory_uri();
-		$template_uri = preg_replace( '~/' . preg_quote( WPMT_THEME_DIR_NAME, '~' ) . '/?$~', '', $template_uri );
+		$template_uri = preg_replace( '~/' . preg_quote( APP_THEME_DIR_NAME, '~' ) . '/?$~', '', $template_uri );
 		return $template_uri;
 	}
 
@@ -107,7 +107,7 @@ class Assets {
 
 		# Theme and favicon URI
 		$theme_uri = $this->getThemeUri();
-		$favicon_uri = apply_filters( 'wpmt_favicon_uri', $theme_uri . '/' . WPMT_DIST_DIR_NAME . '/images/favicon.ico' );
+		$favicon_uri = apply_filters( 'app_favicon_uri', $theme_uri . '/' . APP_DIST_DIR_NAME . '/images/favicon.ico' );
 
 		# Determine version based on file modified time.
 		# If the $version is false, the file does not exist
