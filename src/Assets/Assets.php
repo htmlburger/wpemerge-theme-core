@@ -41,7 +41,7 @@ class Assets {
 		$version = false;
 
 		if ( ! $this->isExternalUrl( $src, $home_url ) ) {
-			# Generate the absolute path to the file
+			// Generate the absolute path to the file
 			$file_path = str_replace(
 				[$home_url, '/'],
 				[ABSPATH, DIRECTORY_SEPARATOR],
@@ -49,7 +49,7 @@ class Assets {
 			);
 
 			if ( file_exists( $file_path ) ) {
-				# Use the last modified time of the file as a version
+				// Use the last modified time of the file as a version
 				$version = filemtime( $file_path );
 			}
 		}
@@ -105,17 +105,16 @@ class Assets {
 			return;
 		}
 
-		# Theme and favicon URI
 		$theme_uri = $this->getThemeUri();
 		$favicon_uri = apply_filters( 'app_favicon_uri', $theme_uri . '/' . APP_DIST_DIR_NAME . '/images/favicon.ico' );
 
-		# Determine version based on file modified time.
-		# If the $version is false, the file does not exist
+		// Determine version based on file modified time.
+		// If the $version is false, the file does not exist
 		$version = $this->generateFileVersion( $favicon_uri );
 
-		# Display the favicon only if it exists
+		// Display the favicon only if it exists
 		if ( $version !== false ) {
-			# Add the version string to the favicon URI
+			// Add the version string to the favicon URI
 			$favicon_uri = add_query_arg( 'ver', $version, $favicon_uri );
 
 			echo '<link rel="shortcut icon" href="' . $favicon_uri . '" />' . "\n";
