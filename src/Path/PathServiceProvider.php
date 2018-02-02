@@ -2,7 +2,7 @@
 
 namespace WPEmergeTheme\Path;
 
-use WPEmerge;
+use WPEmerge\Facades\Framework;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
@@ -19,7 +19,7 @@ class PathServiceProvider implements ServiceProviderInterface {
 			return new Path();
 		};
 
-		WPEmerge::facade( 'Theme\Path', PathFacade::class );
+		Framework::facade( 'Theme\Path', PathFacade::class );
 	}
 
 	/**

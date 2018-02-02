@@ -2,7 +2,7 @@
 
 namespace WPEmergeTheme\Image;
 
-use WPEmerge;
+use WPEmerge\Facades\Framework;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
@@ -19,7 +19,7 @@ class ImageServiceProvider implements ServiceProviderInterface {
 			return new Image();
 		};
 
-		WPEmerge::facade( 'Theme\Image', ImageFacade::class );
+		Framework::facade( 'Theme\Image', ImageFacade::class );
 	}
 
 	/**

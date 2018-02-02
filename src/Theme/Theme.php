@@ -3,6 +3,7 @@
 namespace WPEmergeTheme\Theme;
 
 use WPEmerge;
+use WPEmerge\Facades\Framework;
 use WPEmerge\Helpers\Mixed;
 use WPEmergeTheme\Assets\AssetsServiceProvider;
 use WPEmergeTheme\Avatar\AvatarServiceProvider;
@@ -59,7 +60,7 @@ class Theme {
 			$this->service_providers
 		);
 
-		WPEmerge::boot( $config );
+		Framework::boot( $config );
 	}
 
 	/**

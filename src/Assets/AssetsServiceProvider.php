@@ -2,7 +2,7 @@
 
 namespace WPEmergeTheme\Assets;
 
-use WPEmerge;
+use WPEmerge\Facades\Framework;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
@@ -19,7 +19,7 @@ class AssetsServiceProvider implements ServiceProviderInterface {
 			return new Assets();
 		};
 
-		WPEmerge::facade( 'Theme\\Assets', AssetsFacade::class );
+		Framework::facade( 'Theme\\Assets', AssetsFacade::class );
 	}
 
 	/**
