@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "10b266011023ef77a66c09ccbaeea773",
+    "content-hash": "88e4e0cf7728280c82db823ac841baa4",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -73,16 +73,16 @@
         },
         {
             "name": "htmlburger/wpemerge",
-            "version": "0.8.0",
+            "version": "0.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/htmlburger/wpemerge.git",
-                "reference": "e173328a89c3620faba7aa6d07ca4d68281e9a6c"
+                "reference": "5301facf8cbd0c9d39301345ade207ad8b402c7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/htmlburger/wpemerge/zipball/e173328a89c3620faba7aa6d07ca4d68281e9a6c",
-                "reference": "e173328a89c3620faba7aa6d07ca4d68281e9a6c",
+                "url": "https://api.github.com/repos/htmlburger/wpemerge/zipball/5301facf8cbd0c9d39301345ade207ad8b402c7a",
+                "reference": "5301facf8cbd0c9d39301345ade207ad8b402c7a",
                 "shasum": ""
             },
             "require": {
@@ -138,20 +138,20 @@
                 "wordpress",
                 "wpemerge"
             ],
-            "time": "2017-12-22T08:13:03+00:00"
+            "time": "2018-01-08T15:06:34+00:00"
         },
         {
             "name": "pimple/pimple",
-            "version": "v3.2.2",
+            "version": "v3.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silexphp/Pimple.git",
-                "reference": "4d45fb62d96418396ec58ba76e6f065bca16e10a"
+                "reference": "9e403941ef9d65d20cba7d54e29fe906db42cf32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/4d45fb62d96418396ec58ba76e6f065bca16e10a",
-                "reference": "4d45fb62d96418396ec58ba76e6f065bca16e10a",
+                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/9e403941ef9d65d20cba7d54e29fe906db42cf32",
+                "reference": "9e403941ef9d65d20cba7d54e29fe906db42cf32",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +188,7 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2017-07-23T07:32:15+00:00"
+            "time": "2018-01-21T07:42:36+00:00"
         },
         {
             "name": "psr/container",

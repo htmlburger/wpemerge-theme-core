@@ -4,7 +4,7 @@
 	"type": "library",
 	"keywords": [],
 	"homepage": "https://wpemerge.com/",
-	"license": "GPL-2.0",
+	"license": "GPL-2.0-only",
 	"authors": [
 		{
             "name": "htmlBurger",
@@ -20,7 +20,7 @@
         }
 	],
 	"require": {
-		"htmlburger/wpemerge": "^0.8.0"
+		"htmlburger/wpemerge": "^0.8"
 	},
 	"autoload": {
 		"psr-4": {
