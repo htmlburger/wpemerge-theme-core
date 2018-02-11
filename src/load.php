@@ -1,8 +1,8 @@
 <?php
 
-use WPEmerge\Facades\Framework;
 use WPEmergeTheme\Theme\Theme;
 use WPEmergeTheme\Theme\ThemeFacade;
+use WPEmerge\Facades\Framework;
 
 // @codeCoverageIgnoreStart
 $container = Framework::getContainer();
