@@ -4,29 +4,48 @@ namespace WPEmergeTheme\Sidebar;
 
 class Sidebar {
 	/**
+	 * Check if the current page is part of the blog structure.
+	 *
+	 * @return boolean
+	 */
+	protected function isBlog() {
+		return ( is_home() || is_archive() || is_search() || ( is_single() && get_post_type() === 'post' ) );
+	}
+
+	/**
+	 * Get the post id that should be checked for a custom sidebar for the current request.
+	 *
+	 * @return int
+	 */
+	protected function getSidebarPostId() {
+		$post_id = intval( get_the_ID() );
+
+		if ( $this->isBlog() ) {
+			$post_id = intval( get_option( 'page_for_posts' ) );
+		}
+
+		$post_id = intval( apply_filters( 'app_sidebar_context_post_id', $post_id ) );
+
+		return $post_id;
+	}
+
+	/**
 	 * Get the current sidebar id.
 	 *
 	 * @param  string $meta_key Meta key to check for a sidebar id.
 	 * @return string
 	 */
-	public function getCurrentSidebarId( $meta_key = '_crb_custom_sidebar' ) {
-		$page_id = 0;
-		$sidebar = '';
+	public function getCurrentSidebarId( $meta_key = '_app_custom_sidebar' ) {
+		$post_id = $this->getSidebarPostId();
+		$default_sidebar = 'default-sidebar';
+		$sidebar = $default_sidebar;
 
-		if ( is_page() ) {
-			$page_id = get_the_ID();
-		} elseif ( is_home() || is_archive() || is_search() || ( is_single() && get_post_type() === 'post' ) ) {
-			$page_id = intval( get_option( 'page_for_posts' ) );
-		}
-
-		$page_id = apply_filters( 'app_sidebar_context_page_id', $page_id );
-
-		if ( $page_id ) {
-			$sidebar = get_post_meta( $page_id, $meta_key );
+		if ( $post_id ) {
+			$sidebar = get_post_meta( $post_id, $meta_key, true );
 		}
 
 		if ( empty( $sidebar ) ) {
-			$sidebar = 'default-sidebar';
+			$sidebar = $default_sidebar;
 		}
 
 		return $sidebar;
