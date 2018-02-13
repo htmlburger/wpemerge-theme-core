@@ -8,7 +8,6 @@ use WPEmerge\Helpers\Mixed;
 use WPEmergeTheme\Assets\AssetsServiceProvider;
 use WPEmergeTheme\Avatar\AvatarServiceProvider;
 use WPEmergeTheme\Image\ImageServiceProvider;
-use WPEmergeTheme\Path\PathServiceProvider;
 use WPEmergeTheme\Sidebar\SidebarServiceProvider;
 
 /**
@@ -31,7 +30,6 @@ class Theme {
 		AssetsServiceProvider::class,
 		AvatarServiceProvider::class,
 		ImageServiceProvider::class,
-		PathServiceProvider::class,
 		SidebarServiceProvider::class,
 	];
 

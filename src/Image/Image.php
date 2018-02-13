@@ -2,7 +2,7 @@
 
 namespace WPEmergeTheme\Image;
 
-use Theme\Path;
+use WPEmerge\Helpers\Mixed;
 
 class Image {
 	/**
@@ -69,7 +69,7 @@ class Image {
 
 		$upload_dir = wp_upload_dir();
 		$attachment = wp_get_attachment_metadata( $attachment_id );
-		$source = Path::normalize( get_attached_file( $attachment_id ) );
+		$source = Mixed::normalizePath( get_attached_file( $attachment_id ) );
 
 		if ( ! $attachment || ! file_exists( $source ) ) {
 			return '';
@@ -77,7 +77,7 @@ class Image {
 
 		$attachment_subdirectory = preg_replace( '/\/?[^\/]+\z/', '', $attachment['file'] );
 		$filename = $this->getResizedFilename( $source, $width, $height, $crop );
-		$destination = Path::normalize( Path::normalize( $upload_dir['basedir'] ) . DIRECTORY_SEPARATOR . $attachment_subdirectory ) . DIRECTORY_SEPARATOR . $filename;
+		$destination = Mixed::normalizePath( Mixed::normalizePath( $upload_dir['basedir'] ) . DIRECTORY_SEPARATOR . $attachment_subdirectory ) . DIRECTORY_SEPARATOR . $filename;
 
 		$stored = $this->store( $source, $destination, $width, $height, $crop );
 
