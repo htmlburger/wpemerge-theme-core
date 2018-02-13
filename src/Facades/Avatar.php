@@ -9,7 +9,7 @@ use WPEmerge\Support\Facade;
  *
  * @codeCoverageIgnore
  */
-class AvatarFacade extends Facade {
+class Avatar extends Facade {
 	protected static function getFacadeAccessor() {
 		return 'wpemerge_theme.avatar.avatar';
 	}

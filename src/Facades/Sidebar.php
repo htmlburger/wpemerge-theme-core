@@ -9,7 +9,7 @@ use WPEmerge\Support\Facade;
  *
  * @codeCoverageIgnore
  */
-class SidebarFacade extends Facade {
+class Sidebar extends Facade {
 	protected static function getFacadeAccessor() {
 		return 'wpemerge_theme.sidebar.sidebar';
 	}

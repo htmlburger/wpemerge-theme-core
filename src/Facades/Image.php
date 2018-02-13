@@ -9,7 +9,7 @@ use WPEmerge\Support\Facade;
  *
  * @codeCoverageIgnore
  */
-class ImageFacade extends Facade {
+class Image extends Facade {
 	protected static function getFacadeAccessor() {
 		return 'wpemerge_theme.image.image';
 	}
