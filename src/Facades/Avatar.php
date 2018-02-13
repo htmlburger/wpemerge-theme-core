@@ -1,6 +1,6 @@
 <?php
 
-namespace WPEmergeTheme\Avatar;
+namespace WPEmergeTheme\Facades;
 
 use WPEmerge\Support\Facade;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace WPEmergeTheme\Sidebar;
+namespace WPEmergeTheme\Facades;
 
 use WPEmerge\Support\Facade;
 

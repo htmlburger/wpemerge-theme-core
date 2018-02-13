@@ -6,7 +6,7 @@ use WPEmerge\Facades\Framework;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
- * Provide image dependencies
+ * Provide image dependencies.
  *
  * @codeCoverageIgnore
  */
@@ -19,7 +19,7 @@ class ImageServiceProvider implements ServiceProviderInterface {
 			return new Image();
 		};
 
-		Framework::facade( 'Theme\Image', ImageFacade::class );
+		Framework::facade( 'Theme\\Image', \WPEmergeTheme\Facades\Image::class );
 	}
 
 	/**

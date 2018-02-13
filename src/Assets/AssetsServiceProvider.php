@@ -6,7 +6,7 @@ use WPEmerge\Facades\Framework;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
- * Provide assets dependencies
+ * Provide assets dependencies.
  *
  * @codeCoverageIgnore
  */
@@ -19,7 +19,7 @@ class AssetsServiceProvider implements ServiceProviderInterface {
 			return new Assets();
 		};
 
-		Framework::facade( 'Theme\\Assets', AssetsFacade::class );
+		Framework::facade( 'Theme\\Assets', \WPEmergeTheme\Facades\Assets::class );
 	}
 
 	/**

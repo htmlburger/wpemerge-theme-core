@@ -1,6 +1,6 @@
 <?php
 
-namespace WPEmergeTheme\Image;
+namespace WPEmergeTheme\Facades;
 
 use WPEmerge\Support\Facade;
 

@@ -6,7 +6,7 @@ use WPEmerge\Facades\Framework;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
- * Provide avatar dependencies
+ * Provide avatar dependencies.
  *
  * @codeCoverageIgnore
  */
@@ -19,13 +19,13 @@ class AvatarServiceProvider implements ServiceProviderInterface {
 			return new Avatar();
 		};
 
-		Framework::facade( 'Theme\\Avatar', AvatarFacade::class );
+		Framework::facade( 'Theme\\Avatar', \WPEmergeTheme\Facades\Avatar::class );
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public function boot( $container ) {
-		AvatarFacade::boot();
+		\WPEmergeTheme\Facades\Avatar::boot();
 	}
 }

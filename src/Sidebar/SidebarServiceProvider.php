@@ -6,7 +6,7 @@ use WPEmerge\Facades\Framework;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
- * Provide sidebar dependencies
+ * Provide sidebar dependencies.
  *
  * @codeCoverageIgnore
  */
@@ -19,7 +19,7 @@ class SidebarServiceProvider implements ServiceProviderInterface {
 			return new Sidebar();
 		};
 
-		Framework::facade( 'Theme\Sidebar', SidebarFacade::class );
+		Framework::facade( 'Theme\\Sidebar', \WPEmergeTheme\Facades\Sidebar::class );
 	}
 
 	/**
