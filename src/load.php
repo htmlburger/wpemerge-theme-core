@@ -1,7 +1,7 @@
 <?php
 
-use WPEmergeTheme\Theme\Theme;
 use WPEmergeTheme\Facades\Theme as ThemeFacade;
+use WPEmergeTheme\Theme\Theme;
 use WPEmerge\Facades\Framework;
 
 // @codeCoverageIgnoreStart
