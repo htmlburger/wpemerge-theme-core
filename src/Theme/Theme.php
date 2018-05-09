@@ -4,7 +4,7 @@ namespace WPEmergeTheme\Theme;
 
 use WPEmerge;
 use WPEmerge\Facades\Framework;
-use WPEmerge\Helpers\Mixed;
+use WPEmerge\Helpers\MixedType;
 use WPEmergeTheme\Assets\AssetsServiceProvider;
 use WPEmergeTheme\Avatar\AvatarServiceProvider;
 use WPEmergeTheme\Image\ImageServiceProvider;
