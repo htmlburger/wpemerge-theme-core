@@ -32,20 +32,20 @@ class Sidebar {
 	/**
 	 * Get the current sidebar id.
 	 *
-	 * @param  string $meta_key Meta key to check for a sidebar id.
+	 * @param  string $default Default sidebar to use if a custom one is not specified.
+	 * @param  string $meta_key Meta key to check for a custom sidebar id.
 	 * @return string
 	 */
-	public function getCurrentSidebarId( $meta_key = '_app_custom_sidebar' ) {
+	public function getCurrentSidebarId( $default = 'default-sidebar', $meta_key = '_app_custom_sidebar' ) {
 		$post_id = $this->getSidebarPostId();
-		$default_sidebar = 'default-sidebar';
-		$sidebar = $default_sidebar;
+		$sidebar = $default;
 
 		if ( $post_id ) {
 			$sidebar = get_post_meta( $post_id, $meta_key, true );
 		}
 
 		if ( empty( $sidebar ) ) {
-			$sidebar = $default_sidebar;
+			$sidebar = $default;
 		}
 
 		return $sidebar;
