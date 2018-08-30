@@ -2,13 +2,13 @@
 /**
  * Absolute path to theme core's directory
  */
-if ( ! defined( 'WPEMERGETHEME_DIR' ) ) {
-	define( 'WPEMERGETHEME_DIR', __DIR__ );
+if ( ! defined( 'WPEMERGE_THEME_CORE_DIR' ) ) {
+	define( 'WPEMERGE_THEME_CORE_DIR', __DIR__ );
 }
 
 /**
  * Absolute path to theme core's src directory
  */
-if ( ! defined( 'WPEMERGETHEME_SRC_DIR' ) ) {
-	define( 'WPEMERGETHEME_SRC_DIR', WPEMERGETHEME_DIR . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR );
+if ( ! defined( 'WPEMERGE_THEME_CORE_SRC_DIR' ) ) {
+	define( 'WPEMERGE_THEME_CORE_SRC_DIR', WPEMERGE_THEME_CORE_DIR . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR );
 }

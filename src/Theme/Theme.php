@@ -4,9 +4,9 @@ namespace WPEmergeTheme\Theme;
 
 use WPEmerge;
 use WPEmerge\Facades\Framework;
-use WPEmerge\Helpers\MixedType;
 use WPEmergeTheme\Assets\AssetsServiceProvider;
 use WPEmergeTheme\Avatar\AvatarServiceProvider;
+use WPEmergeTheme\Config\ConfigServiceProvider;
 use WPEmergeTheme\Image\ImageServiceProvider;
 use WPEmergeTheme\Sidebar\SidebarServiceProvider;
 
@@ -29,6 +29,7 @@ class Theme {
 	protected $service_providers = [
 		AssetsServiceProvider::class,
 		AvatarServiceProvider::class,
+		ConfigServiceProvider::class,
 		ImageServiceProvider::class,
 		SidebarServiceProvider::class,
 	];
