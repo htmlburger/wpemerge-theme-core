@@ -4,6 +4,10 @@ use WPEmergeTheme\Facades\Theme as ThemeFacade;
 use WPEmergeTheme\Theme\Theme;
 use WPEmerge\Facades\Framework;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 // @codeCoverageIgnoreStart
 $container = Framework::getContainer();
 $container['wpemerge_theme'] = function() {
