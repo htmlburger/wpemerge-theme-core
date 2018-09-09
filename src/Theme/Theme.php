@@ -84,7 +84,7 @@ class Theme {
 	}
 
 	/**
-	 * Render a template partial using app_partial().
+	 * Render a template partial using app_render().
 	 * Interface matches get_template_part() with the addition of $context.
 	 *
 	 * @param  string $partial
@@ -107,7 +107,7 @@ class Theme {
 
 		$templates[] = "partials/${partial}.php";
 
-		app_partial( $templates, $context );
+		app_render( $templates, $context );
 	}
 
 	/**
