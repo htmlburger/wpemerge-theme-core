@@ -4,7 +4,7 @@ use WPEmergeTheme\Facades\Theme as ThemeFacade;
 use WPEmergeTheme\Theme\Theme;
 use WPEmerge\Facades\Framework;
 
-if ( ! defined( 'ABSPATH' ) ) {
+if ( php_sapi_name() !== 'cli' && ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
