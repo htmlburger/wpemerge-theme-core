@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "aeeca388ab02939d8b6f1913abc82b9e",
+    "content-hash": "3520ec7cf6ada1394c34122a6435b57d",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -73,16 +73,16 @@
         },
         {
             "name": "htmlburger/wpemerge",
-            "version": "0.10.0",
+            "version": "0.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/htmlburger/wpemerge.git",
-                "reference": "553864d8c6d5ce09b4696aaf26fe2190813e2cc9"
+                "reference": "2e9daefdd37b917c48f2d281359c1da29a63004a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/htmlburger/wpemerge/zipball/553864d8c6d5ce09b4696aaf26fe2190813e2cc9",
-                "reference": "553864d8c6d5ce09b4696aaf26fe2190813e2cc9",
+                "url": "https://api.github.com/repos/htmlburger/wpemerge/zipball/2e9daefdd37b917c48f2d281359c1da29a63004a",
+                "reference": "2e9daefdd37b917c48f2d281359c1da29a63004a",
                 "shasum": ""
             },
             "require": {
@@ -139,7 +139,7 @@
                 "wordpress",
                 "wpemerge"
             ],
-            "time": "2018-09-11T09:40:19+00:00"
+            "time": "2018-09-12T19:23:48+00:00"
         },
         {
             "name": "pimple/pimple",
