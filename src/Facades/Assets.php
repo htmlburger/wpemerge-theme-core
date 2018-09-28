@@ -8,6 +8,7 @@ use WPEmerge\Support\Facade;
  * Provide access to the assets service
  *
  * @codeCoverageIgnore
+ * @see \WPEmergeTheme\Assets\Assets
  */
 class Assets extends Facade {
 	protected static function getFacadeAccessor() {
