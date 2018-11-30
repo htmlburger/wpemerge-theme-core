@@ -2,6 +2,7 @@
 
 namespace WPEmergeTheme\Theme;
 
+use Exception;
 use WPEmerge;
 use WPEmerge\Facades\Framework;
 use WPEmergeTheme\Assets\AssetsServiceProvider;

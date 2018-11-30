@@ -2,6 +2,8 @@
 
 namespace WPEmergeTheme\Avatar;
 
+use WP_Comment;
+
 class Avatar {
 	/**
 	 * Default avatar attachment id.
@@ -161,7 +163,7 @@ class Avatar {
 		$id = $this->idOrEmailToId( $id_or_email );
 
 		if ( is_numeric( $id ) ) {
-			$filtered_url = $this->getAvatarUrl( $id, $this->getSize( $args ) );
+			$filtered_url = $this->getAvatarUrl( (int) $id, $this->getSize( $args ) );
 			if ( $filtered_url !== null ) {
 				$url = $filtered_url;
 			}
