@@ -1,21 +1,28 @@
 build:
-  environment:
-    php:
-      version: 5.5
   nodes:
     analysis:
+      dependencies:
+        before:
+        - composer require --dev johnpbloch/wordpress
       project_setup:
-        override:
-          - 'true'
+        override: true
       tests:
         override:
-          - 'true'
+        - php-scrutinizer-run
+
+filter:
+  dependency_paths:
+    - wordpress/
 
 checks:
   php: true
 
+build_failure_conditions:
+  - 'issues.exists'
+
 tools:
   sensiolabs_security_checker: true
+  external_code_coverage: true
   php_mess_detector:
     config:
       code_size_rules:
@@ -131,7 +138,7 @@ tools:
           value_as_reference: true
           traversable: true
       reflection_checks:
-          enabled: false
+        enabled: false
       precedence_checks:
         enabled: true
         assignment_in_condition: true
