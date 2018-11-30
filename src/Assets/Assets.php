@@ -4,6 +4,22 @@ namespace WPEmergeTheme\Assets;
 
 class Assets {
 	/**
+	 * Manifest.
+	 *
+	 * @var Manifest
+	 */
+	protected $manifest = null;
+
+	/**
+	 * Constructor.
+	 *
+	 * @param Manifest $manifest
+	 */
+	public function __construct( Manifest $manifest ) {
+		$this->manifest = $manifest;
+	}
+
+	/**
 	 * Remove the protocol from an http/https url.
 	 *
 	 * @param  string $url
@@ -36,7 +52,7 @@ class Assets {
 	protected function generateFileVersion( $src ) {
 		// Normalize both URLs in order to avoid problems with http, https
 		// and protocol-less cases
-		$src = $this->removeProtocol($src);
+		$src = $this->removeProtocol( $src );
 		$home_url = $this->removeProtocol( site_url( '/' ) );
 		$version = false;
 
@@ -66,6 +82,24 @@ class Assets {
 		$template_uri = get_template_directory_uri();
 		$template_uri = preg_replace( '~/' . preg_quote( APP_THEME_DIR_NAME, '~' ) . '/?$~', '', $template_uri );
 		return $template_uri;
+	}
+
+	/**
+	 * Get the public URI to a generated asset based on manifest.json.
+	 *
+	 * @param string $asset
+	 *
+	 * @return string
+	 */
+	public function getAssetUri( $asset ) {
+		// Path with unix-style slashes.
+		$path = $this->manifest->get( $asset, '' );
+
+		if ( ! $path ) {
+			return '';
+		}
+
+		return $this->getThemeUri() . '/' . APP_DIST_DIR_NAME . '/' . $path;
 	}
 
 	/**
@@ -105,19 +139,8 @@ class Assets {
 			return;
 		}
 
-		$theme_uri = $this->getThemeUri();
-		$favicon_uri = apply_filters( 'app_favicon_uri', $theme_uri . '/' . APP_DIST_DIR_NAME . '/images/favicon.ico' );
+		$favicon_uri = apply_filters( 'app_favicon_uri', $this->getAssetUri( 'images/favicon.ico' ) );
 
-		// Determine version based on file modified time.
-		// If the $version is false, the file does not exist
-		$version = $this->generateFileVersion( $favicon_uri );
-
-		// Display the favicon only if it exists
-		if ( $version !== false ) {
-			// Add the version string to the favicon URI
-			$favicon_uri = add_query_arg( 'ver', $version, $favicon_uri );
-
-			echo '<link rel="shortcut icon" href="' . $favicon_uri . '" />' . "\n";
-		}
+		echo '<link rel="shortcut icon" href="' . $favicon_uri . '" />' . "\n";
 	}
 }

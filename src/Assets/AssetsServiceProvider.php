@@ -15,8 +15,12 @@ class AssetsServiceProvider implements ServiceProviderInterface {
 	 * {@inheritDoc}
 	 */
 	public function register( $container ) {
-		$container['wpemerge_theme.assets.assets'] = function() {
-			return new Assets();
+		$container['wpemerge_theme.assets.manifest'] = function() {
+			return new Manifest();
+		};
+
+		$container['wpemerge_theme.assets.assets'] = function( $container ) {
+			return new Assets( $container['wpemerge_theme.assets.manifest'] );
 		};
 
 		Framework::facade( 'Theme\\Assets', \WPEmergeTheme\Facades\Assets::class );
