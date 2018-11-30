@@ -22,7 +22,6 @@ build_failure_conditions:
 
 tools:
   sensiolabs_security_checker: true
-  external_code_coverage: true
   php_mess_detector:
     config:
       code_size_rules:
