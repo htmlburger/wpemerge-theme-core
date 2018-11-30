@@ -15,6 +15,8 @@ trait ReadsJsonTrait {
 
 	/**
 	 * Get the path to the JSON that should be read.
+	 *
+	 * @return string
 	 */
 	abstract protected function getJsonPath();
 
