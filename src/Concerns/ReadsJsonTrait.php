@@ -2,7 +2,6 @@
 
 namespace WPEmergeTheme\Concerns;
 
-use RuntimeException;
 use WPEmerge\Support\Arr;
 
 trait ReadsJsonTrait {
