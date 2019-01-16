@@ -24,7 +24,7 @@ class Manifest {
 		try {
 			return $this->traitLoad( $file );
 		} catch ( JsonFileNotFoundException $e ) {
-			throw new JsonFileNotFoundException( $e->getMessage() . ' Please run one of the build commands to generate it.' );
+			// We used to throw an exception here but it just causes confusion for new users.
 		}
 	}
 }
