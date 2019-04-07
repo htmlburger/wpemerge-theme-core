@@ -16,14 +16,14 @@ use WPEmergeTheme\Sidebar\SidebarServiceProvider;
  */
 class Theme {
 	/**
-	 * Flag whether the theme has been booted.
+	 * Flag whether the theme has been bootstrapped.
 	 *
 	 * @var boolean
 	 */
-	protected $booted = false;
+	protected $bootstrapped = false;
 
 	/**
-	 * Array of theme service providers
+	 * Array of theme service providers.
 	 *
 	 * @var string[]
 	 */
@@ -36,12 +36,12 @@ class Theme {
 	];
 
 	/**
-	 * Get whether the theme has been booted.
+	 * Get whether the theme has been bootstrapped.
 	 *
 	 * @return boolean
 	 */
-	public function isBooted() {
-		return $this->booted;
+	public function isBootstrapped() {
+		return $this->bootstrapped;
 	}
 
 	/**
@@ -50,7 +50,7 @@ class Theme {
 	 * @param  array $config
 	 * @return void
 	 */
-	protected function bootFramework( $config ) {
+	protected function bootstrapFramework( $config ) {
 		if ( ! isset( $config['providers'] ) ) {
 			$config['providers'] = [];
 		}
@@ -60,7 +60,7 @@ class Theme {
 			$this->service_providers
 		);
 
-		Framework::boot( $config );
+		Framework::bootstrap( $config );
 	}
 
 	/**
@@ -70,18 +70,13 @@ class Theme {
 	 * @throws Exception
 	 * @return void
 	 */
-	public function boot( $config = [] ) {
-		if ( $this->isBooted() ) {
-			throw new Exception( static::class . ' already booted.' );
+	public function bootstrap( $config = [] ) {
+		if ( $this->isBootstrapped() ) {
+			throw new Exception( static::class . ' already bootstrapped.' );
 		}
 
-		do_action( 'wpemerge_theme.booting' );
-
-		$this->bootFramework( $config );
-
-		$this->booted = true;
-
-		do_action( 'wpemerge_theme.booted' );
+		$this->bootstrapFramework( $config );
+		$this->bootstrapped = true;
 	}
 
 	/**

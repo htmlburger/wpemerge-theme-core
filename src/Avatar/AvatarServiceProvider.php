@@ -25,7 +25,7 @@ class AvatarServiceProvider implements ServiceProviderInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function boot( $container ) {
-		\WPEmergeTheme\Facades\Avatar::boot();
+	public function bootstrap( $container ) {
+		\WPEmergeTheme\Facades\Avatar::bootstrap();
 	}
 }

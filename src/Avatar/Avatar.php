@@ -24,7 +24,7 @@ class Avatar {
 	 *
 	 * @return void
 	 */
-	public function boot() {
+	public function bootstrap() {
 		add_filter( 'get_avatar_url', [$this, 'filterAvatar'], 10, 3 );
 	}
 
