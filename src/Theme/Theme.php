@@ -4,7 +4,7 @@ namespace WPEmergeTheme\Theme;
 
 use Exception;
 use WPEmerge;
-use WPEmerge\Facades\Framework;
+use WPEmerge\Facades\Application;
 use WPEmergeTheme\Assets\AssetsServiceProvider;
 use WPEmergeTheme\Avatar\AvatarServiceProvider;
 use WPEmergeTheme\Config\ConfigServiceProvider;
@@ -50,7 +50,7 @@ class Theme {
 	 * @param  array $config
 	 * @return void
 	 */
-	protected function bootstrapFramework( $config ) {
+	protected function bootstrapApplication( $config ) {
 		if ( ! isset( $config['providers'] ) ) {
 			$config['providers'] = [];
 		}
@@ -60,7 +60,7 @@ class Theme {
 			$this->service_providers
 		);
 
-		Framework::bootstrap( $config );
+		Application::bootstrap( $config );
 	}
 
 	/**
@@ -75,7 +75,7 @@ class Theme {
 			throw new Exception( static::class . ' already bootstrapped.' );
 		}
 
-		$this->bootstrapFramework( $config );
+		$this->bootstrapApplication( $config );
 		$this->bootstrapped = true;
 	}
 
@@ -107,7 +107,7 @@ class Theme {
 	}
 
 	/**
-	 * Alias of WPEmergeTheme\Assets\Assets::getThemeUri
+	 * Alias for WPEmergeTheme\Assets\Assets::getThemeUri().
 	 *
 	 * @see WPEmergeTheme\Assets\Assets::getThemeUri
 	 * @return string

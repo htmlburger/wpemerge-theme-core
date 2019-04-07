@@ -2,7 +2,7 @@
 
 namespace WPEmergeTheme\Avatar;
 
-use WPEmerge\Facades\Framework;
+use WPEmerge\Facades\Application;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
@@ -19,7 +19,7 @@ class AvatarServiceProvider implements ServiceProviderInterface {
 			return new Avatar();
 		};
 
-		Framework::facade( 'Theme\\Avatar', \WPEmergeTheme\Facades\Avatar::class );
+		Application::facade( 'Theme\\Avatar', \WPEmergeTheme\Facades\Avatar::class );
 	}
 
 	/**

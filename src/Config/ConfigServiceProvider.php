@@ -2,7 +2,7 @@
 
 namespace WPEmergeTheme\Config;
 
-use WPEmerge\Facades\Framework;
+use WPEmerge\Facades\Application;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
@@ -19,7 +19,7 @@ class ConfigServiceProvider implements ServiceProviderInterface {
 			return new Config();
 		};
 
-		Framework::facade( 'Theme\\Config', \WPEmergeTheme\Facades\Config::class );
+		Application::facade( 'Theme\\Config', \WPEmergeTheme\Facades\Config::class );
 	}
 
 	/**

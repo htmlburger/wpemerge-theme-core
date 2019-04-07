@@ -2,7 +2,7 @@
 
 namespace WPEmergeTheme\Assets;
 
-use WPEmerge\Facades\Framework;
+use WPEmerge\Facades\Application;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
@@ -23,7 +23,7 @@ class AssetsServiceProvider implements ServiceProviderInterface {
 			return new Assets( $container['wpemerge_theme.assets.manifest'] );
 		};
 
-		Framework::facade( 'Theme\\Assets', \WPEmergeTheme\Facades\Assets::class );
+		Application::facade( 'Theme\\Assets', \WPEmergeTheme\Facades\Assets::class );
 	}
 
 	/**

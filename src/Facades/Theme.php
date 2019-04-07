@@ -5,7 +5,7 @@ namespace WPEmergeTheme\Facades;
 use WPEmerge\Support\Facade;
 
 /**
- * Provide access to the framework instance.
+ * Provide access to the theme core instance.
  *
  * @codeCoverageIgnore
  * @see \WPEmergeTheme\Theme\Theme

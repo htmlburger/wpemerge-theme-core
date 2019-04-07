@@ -2,7 +2,7 @@
 
 namespace WPEmergeTheme\Sidebar;
 
-use WPEmerge\Facades\Framework;
+use WPEmerge\Facades\Application;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
@@ -19,7 +19,7 @@ class SidebarServiceProvider implements ServiceProviderInterface {
 			return new Sidebar();
 		};
 
-		Framework::facade( 'Theme\\Sidebar', \WPEmergeTheme\Facades\Sidebar::class );
+		Application::facade( 'Theme\\Sidebar', \WPEmergeTheme\Facades\Sidebar::class );
 	}
 
 	/**
