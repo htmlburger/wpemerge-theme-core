@@ -38,9 +38,9 @@ class Assets {
 	 */
 	protected function isExternalUrl( $url, $home_url ) {
 		$delimiter = '~';
-		$regex_home_url = preg_quote( $home_url, $delimiter );
-		$regex = $delimiter . '^' . $regex_home_url . $delimiter . 'i';
-		return ! preg_match( $regex, $url );
+		$pattern_home_url = preg_quote( $home_url, $delimiter );
+		$pattern = $delimiter . '^' . $pattern_home_url . $delimiter . 'i';
+		return ! preg_match( $pattern, $url );
 	}
 
 	/**
