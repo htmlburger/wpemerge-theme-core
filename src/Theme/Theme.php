@@ -4,6 +4,7 @@ namespace WPEmergeTheme\Theme;
 
 use Exception;
 use WPEmerge;
+use WPEmerge\Exceptions\ConfigurationException;
 use WPEmerge\Facades\Application;
 use WPEmergeTheme\Assets\AssetsServiceProvider;
 use WPEmergeTheme\Avatar\AvatarServiceProvider;
@@ -72,7 +73,7 @@ class Theme {
 	 */
 	public function bootstrap( $config = [] ) {
 		if ( $this->isBootstrapped() ) {
-			throw new Exception( static::class . ' already bootstrapped.' );
+			throw new ConfigurationException( static::class . ' already bootstrapped.' );
 		}
 
 		$this->bootstrapApplication( $config );
