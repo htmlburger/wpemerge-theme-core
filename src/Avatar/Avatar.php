@@ -85,8 +85,8 @@ class Avatar {
 	/**
 	 * Returns a size (name or [widget, height]) for the given avatar arguments.
 	 *
-	 * @param  array            $arguments
-	 * @return integer[]|string
+	 * @param  array                 $arguments
+	 * @return array<integer>|string
 	 */
 	protected function getSize( $arguments ) {
 		$size = 'full';
@@ -103,8 +103,8 @@ class Avatar {
 	/**
 	 * Get attachment fallback chain for the user avatar.
 	 *
-	 * @param  integer   $user_id
-	 * @return integer[]
+	 * @param  integer        $user_id
+	 * @return array<integer>
 	 */
 	protected function getAttachmentFallbackChain( $user_id ) {
 		$chain = [];
@@ -126,8 +126,8 @@ class Avatar {
 	/**
 	 * Get avatar url
 	 *
-	 * @param  integer          $id
-	 * @param  integer[]|string $size
+	 * @param  integer               $id
+	 * @param  array<integer>|string $size
 	 * @return string|null
 	 */
 	protected function getAvatarUrl( $id, $size ) {

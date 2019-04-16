@@ -105,10 +105,10 @@ class Assets {
 	/**
 	 * Enqueue a style, dynamically generating a version for it.
 	 *
-	 * @param  string   $handle
-	 * @param  string   $src
-	 * @param  string[] $dependencies
-	 * @param  string   $media
+	 * @param  string        $handle
+	 * @param  string        $src
+	 * @param  array<string> $dependencies
+	 * @param  string        $media
 	 * @return void
 	 */
 	public function enqueueStyle( $handle, $src, $dependencies = [], $media = 'all' ) {
@@ -118,10 +118,10 @@ class Assets {
 	/**
 	 * Enqueue a script, dynamically generating a version for it.
 	 *
-	 * @param  string    $handle
-	 * @param  string    $src
-	 * @param  stringp[] $dependencies
-	 * @param  boolean   $in_footer
+	 * @param  string        $handle
+	 * @param  string        $src
+	 * @param  array<string> $dependencies
+	 * @param  boolean       $in_footer
 	 * @return void
 	 */
 	public function enqueueScript( $handle, $src, $dependencies = [], $in_footer = false ) {
