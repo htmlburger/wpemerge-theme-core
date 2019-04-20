@@ -13,5 +13,5 @@ $container = Application::getContainer();
 $container['wpemerge_theme'] = function() {
 	return new Theme();
 };
-Application::facade( 'WPEmergeTheme', ThemeFacade::class );
+Application::alias( 'WPEmergeTheme', ThemeFacade::class );
 // @codeCoverageIgnoreEnd

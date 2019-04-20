@@ -9,6 +9,11 @@ use WPEmerge\Support\Facade;
  *
  * @codeCoverageIgnore
  * @see \WPEmergeTheme\Theme\Theme
+ *
+ * @method static boolean isBootstrapped()
+ * @method static void bootstrap( array $config = [] )
+ * @method static void partial( string $partial, string $child = '', array $context = [] )
+ * @method static string uri()
  */
 class Theme extends Facade {
 	protected static function getFacadeAccessor() {

@@ -9,6 +9,8 @@ use WPEmerge\Support\Facade;
  *
  * @codeCoverageIgnore
  * @see \WPEmergeTheme\Sidebar\Sidebar
+ *
+ * @method static string getCurrentSidebarId( string $default = 'default-sidebar', string $meta_key = '_app_custom_sidebar' )
  */
 class Sidebar extends Facade {
 	protected static function getFacadeAccessor() {

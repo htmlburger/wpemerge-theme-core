@@ -19,7 +19,7 @@ class AvatarServiceProvider implements ServiceProviderInterface {
 			return new Avatar();
 		};
 
-		Application::facade( 'Theme\\Avatar', \WPEmergeTheme\Facades\Avatar::class );
+		Application::alias( 'Theme\\Avatar', \WPEmergeTheme\Facades\Avatar::class );
 	}
 
 	/**

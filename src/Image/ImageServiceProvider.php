@@ -19,7 +19,7 @@ class ImageServiceProvider implements ServiceProviderInterface {
 			return new Image();
 		};
 
-		Application::facade( 'Theme\\Image', \WPEmergeTheme\Facades\Image::class );
+		Application::alias( 'Theme\\Image', \WPEmergeTheme\Facades\Image::class );
 	}
 
 	/**

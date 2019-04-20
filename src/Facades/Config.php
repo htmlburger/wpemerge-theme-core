@@ -9,6 +9,8 @@ use WPEmerge\Support\Facade;
  *
  * @codeCoverageIgnore
  * @see \WPEmergeTheme\Config\Config
+ *
+ * @method static mixed get( string $key, mixed $default = null )
  */
 class Config extends Facade {
 	protected static function getFacadeAccessor() {

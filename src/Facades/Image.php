@@ -9,6 +9,8 @@ use WPEmerge\Support\Facade;
  *
  * @codeCoverageIgnore
  * @see \WPEmergeTheme\Image\Image
+ *
+ * @method static string thumbnail( integer $attachment_id, integer $width, integer $height, boolean $crop = true )
  */
 class Image extends Facade {
 	protected static function getFacadeAccessor() {

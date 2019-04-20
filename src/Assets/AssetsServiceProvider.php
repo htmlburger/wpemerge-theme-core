@@ -23,7 +23,7 @@ class AssetsServiceProvider implements ServiceProviderInterface {
 			return new Assets( $container['wpemerge_theme.assets.manifest'] );
 		};
 
-		Application::facade( 'Theme\\Assets', \WPEmergeTheme\Facades\Assets::class );
+		Application::alias( 'Theme\\Assets', \WPEmergeTheme\Facades\Assets::class );
 	}
 
 	/**

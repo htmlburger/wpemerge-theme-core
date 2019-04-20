@@ -2,7 +2,6 @@
 
 namespace WPEmergeTheme\Config;
 
-use WPEmerge\Support\Arr;
 use WPEmergeTheme\Concerns\ReadsJsonTrait;
 
 class Config {

@@ -19,7 +19,7 @@ class ConfigServiceProvider implements ServiceProviderInterface {
 			return new Config();
 		};
 
-		Application::facade( 'Theme\\Config', \WPEmergeTheme\Facades\Config::class );
+		Application::alias( 'Theme\\Config', \WPEmergeTheme\Facades\Config::class );
 	}
 
 	/**

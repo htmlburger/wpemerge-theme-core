@@ -2,7 +2,6 @@
 
 namespace WPEmergeTheme\Theme;
 
-use Exception;
 use WPEmerge;
 use WPEmerge\Exceptions\ConfigurationException;
 use WPEmerge\Facades\Application;
@@ -67,8 +66,7 @@ class Theme {
 	/**
 	 * Bootstrap the theme.
 	 *
-	 * @param  array     $config
-	 * @throws Exception
+	 * @param  array $config
 	 * @return void
 	 */
 	public function bootstrap( $config = [] ) {
@@ -76,8 +74,8 @@ class Theme {
 			throw new ConfigurationException( static::class . ' already bootstrapped.' );
 		}
 
-		$this->bootstrapApplication( $config );
 		$this->bootstrapped = true;
+		$this->bootstrapApplication( $config );
 	}
 
 	/**

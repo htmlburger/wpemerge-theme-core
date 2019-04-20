@@ -19,7 +19,7 @@ class SidebarServiceProvider implements ServiceProviderInterface {
 			return new Sidebar();
 		};
 
-		Application::facade( 'Theme\\Sidebar', \WPEmergeTheme\Facades\Sidebar::class );
+		Application::alias( 'Theme\\Sidebar', \WPEmergeTheme\Facades\Sidebar::class );
 	}
 
 	/**
