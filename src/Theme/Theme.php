@@ -8,6 +8,7 @@ use WPEmerge\Facades\Application;
 use WPEmergeTheme\Assets\AssetsServiceProvider;
 use WPEmergeTheme\Avatar\AvatarServiceProvider;
 use WPEmergeTheme\Config\ConfigServiceProvider;
+use WPEmergeTheme\Facades\Assets;
 use WPEmergeTheme\Image\ImageServiceProvider;
 use WPEmergeTheme\Sidebar\SidebarServiceProvider;
 
@@ -108,10 +109,10 @@ class Theme {
 	/**
 	 * Alias for WPEmergeTheme\Assets\Assets::getThemeUri().
 	 *
-	 * @see WPEmergeTheme\Assets\Assets::getThemeUri
+	 * @see \WPEmergeTheme\Assets\Assets::getThemeUri
 	 * @return string
 	 */
 	public function uri() {
-		return \Theme\Assets::getThemeUri();
+		return Assets::getThemeUri();
 	}
 }
