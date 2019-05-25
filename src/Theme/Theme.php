@@ -80,7 +80,7 @@ class Theme {
 	}
 
 	/**
-	 * Render a template partial using app_render().
+	 * Render a template partial using WPEmerge\render().
 	 * Interface matches get_template_part() with the addition of $context.
 	 *
 	 * @param  string $partial
@@ -103,7 +103,7 @@ class Theme {
 
 		$templates[] = "partials/${partial}.php";
 
-		app_render( $templates, $context );
+		WPEmerge\render( $templates, $context );
 	}
 
 	/**
