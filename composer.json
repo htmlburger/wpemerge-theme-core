@@ -20,7 +20,7 @@
 		}
 	],
 	"require": {
-		"htmlburger/wpemerge": "~0.10.1 || ~0.11.0"
+		"htmlburger/wpemerge": "~0.15.0"
 	},
 	"autoload": {
 		"psr-4": {
