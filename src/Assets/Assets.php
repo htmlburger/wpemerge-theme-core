@@ -79,7 +79,7 @@ class Assets {
 	 * @return string
 	 */
 	public function getThemeUri() {
-		$template_uri = get_template_directory_uri();
+		$template_uri = get_stylesheet_directory_uri();
 		$template_uri = preg_replace( '~/' . preg_quote( APP_THEME_DIR_NAME, '~' ) . '/?$~', '', $template_uri );
 		return $template_uri;
 	}
