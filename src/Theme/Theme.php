@@ -3,12 +3,13 @@
 namespace WPEmergeTheme\Theme;
 
 use WPEmerge;
+use WPEmerge\Application\Application;
 use WPEmerge\Exceptions\ConfigurationException;
-use WPEmerge\Facades\Application;
 use WPEmergeTheme\Assets\AssetsServiceProvider;
 use WPEmergeTheme\Avatar\AvatarServiceProvider;
 use WPEmergeTheme\Config\ConfigServiceProvider;
 use WPEmergeTheme\Facades\Assets;
+use WPEmergeTheme\Facades\Theme as ThemeFacade;
 use WPEmergeTheme\Image\ImageServiceProvider;
 use WPEmergeTheme\Sidebar\SidebarServiceProvider;
 
@@ -16,6 +17,13 @@ use WPEmergeTheme\Sidebar\SidebarServiceProvider;
  * Main communication channel with the theme.
  */
 class Theme {
+	/**
+	 * Application instance.
+	 *
+	 * @var Application
+	 */
+	protected $app = null;
+
 	/**
 	 * Flag whether the theme has been bootstrapped.
 	 *
@@ -35,6 +43,41 @@ class Theme {
 		ImageServiceProvider::class,
 		SidebarServiceProvider::class,
 	];
+
+	/**
+	 * Make a new theme instance.
+	 *
+	 * @return self
+	 */
+	public static function make() {
+		$app = Application::make();
+		$theme = new self( $app );
+
+		$container = $app->getContainer();
+		$container['wpemerge_theme'] = $theme;
+
+		$app->alias( 'WPEmergeTheme', ThemeFacade::class );
+
+		return $theme;
+	}
+
+	/**
+	 * Constructor.
+	 *
+	 * @param Application $app
+	 */
+	public function __construct( $app ) {
+		$this->app = $app;
+	}
+
+	/**
+	 * Get application instance.
+	 *
+	 * @return Application
+	 */
+	public function getApplication() {
+		return $this->app;
+	}
 
 	/**
 	 * Get whether the theme has been bootstrapped.
@@ -61,7 +104,7 @@ class Theme {
 			$this->service_providers
 		);
 
-		Application::bootstrap( $config );
+		$this->getApplication()->bootstrap( $config );
 	}
 
 	/**
