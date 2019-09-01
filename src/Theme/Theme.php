@@ -146,7 +146,7 @@ class Theme {
 
 		$templates[] = "partials/${partial}.php";
 
-		WPEmerge\render( $templates, $context );
+		\WPEmerge\render( $templates, $context );
 	}
 
 	/**
