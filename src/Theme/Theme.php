@@ -140,10 +140,10 @@ class Theme {
 		$templates = [];
 
 		if ( $child ) {
-			$templates[] = "partials/${partial}-${child}.php";
+			$templates[] = "view-partials/${partial}-${child}.php";
 		}
 
-		$templates[] = "partials/${partial}.php";
+		$templates[] = "view-partials/${partial}.php";
 
 		\WPEmerge\render( $templates, $context );
 	}
