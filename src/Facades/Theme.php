@@ -10,6 +10,8 @@ use WPEmerge\Support\Facade;
  * @codeCoverageIgnore
  * @see \WPEmergeTheme\Theme\Theme
  *
+ * @method static \WPEmergeTheme\Theme\Theme make()
+ * @method static \WPEmerge\Application\Application getApplication()
  * @method static boolean isBootstrapped()
  * @method static void bootstrap( array $config = [] )
  * @method static void partial( string $partial, string $child = '', array $context = [] )

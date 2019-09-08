@@ -2,7 +2,6 @@
 
 namespace WPEmergeTheme\Theme;
 
-use WPEmerge;
 use WPEmerge\Application\Application;
 use WPEmerge\Exceptions\ConfigurationException;
 use WPEmergeTheme\Assets\AssetsServiceProvider;
