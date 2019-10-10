@@ -2,7 +2,6 @@
 
 namespace WPEmergeTheme\Config;
 
-use WPEmerge\Facades\Application;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
@@ -19,7 +18,8 @@ class ConfigServiceProvider implements ServiceProviderInterface {
 			return new Config();
 		};
 
-		Application::alias( 'Theme\\Config', \WPEmergeTheme\Facades\Config::class );
+		$app = $container[ WPEMERGE_APPLICATION_KEY ];
+		$app->alias( 'Theme\\Config', \WPEmergeTheme\Facades\Config::class );
 	}
 
 	/**

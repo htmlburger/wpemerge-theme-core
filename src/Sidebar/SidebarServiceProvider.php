@@ -2,7 +2,6 @@
 
 namespace WPEmergeTheme\Sidebar;
 
-use WPEmerge\Facades\Application;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
@@ -19,7 +18,8 @@ class SidebarServiceProvider implements ServiceProviderInterface {
 			return new Sidebar();
 		};
 
-		Application::alias( 'Theme\\Sidebar', \WPEmergeTheme\Facades\Sidebar::class );
+		$app = $container[ WPEMERGE_APPLICATION_KEY ];
+		$app->alias( 'Theme\\Sidebar', \WPEmergeTheme\Facades\Sidebar::class );
 	}
 
 	/**

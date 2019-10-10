@@ -2,7 +2,6 @@
 
 namespace WPEmergeTheme\Avatar;
 
-use WPEmerge\Facades\Application;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
@@ -19,7 +18,8 @@ class AvatarServiceProvider implements ServiceProviderInterface {
 			return new Avatar();
 		};
 
-		Application::alias( 'Theme\\Avatar', \WPEmergeTheme\Facades\Avatar::class );
+		$app = $container[ WPEMERGE_APPLICATION_KEY ];
+		$app->alias( 'Theme\\Avatar', \WPEmergeTheme\Facades\Avatar::class );
 	}
 
 	/**

@@ -2,7 +2,6 @@
 
 namespace WPEmergeTheme\Image;
 
-use WPEmerge\Facades\Application;
 use WPEmerge\ServiceProviders\ServiceProviderInterface;
 
 /**
@@ -19,7 +18,8 @@ class ImageServiceProvider implements ServiceProviderInterface {
 			return new Image();
 		};
 
-		Application::alias( 'Theme\\Image', \WPEmergeTheme\Facades\Image::class );
+		$app = $container[ WPEMERGE_APPLICATION_KEY ];
+		$app->alias( 'Theme\\Image', \WPEmergeTheme\Facades\Image::class );
 	}
 
 	/**
