@@ -17,9 +17,6 @@ class SidebarServiceProvider implements ServiceProviderInterface {
 		$container['wpemerge_theme.sidebar.sidebar'] = function() {
 			return new Sidebar();
 		};
-
-		$app = $container[ WPEMERGE_APPLICATION_KEY ];
-		$app->alias( 'Theme\\Sidebar', \WPEmergeTheme\Facades\Sidebar::class );
 	}
 
 	/**

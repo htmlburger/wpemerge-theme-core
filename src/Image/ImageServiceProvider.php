@@ -17,9 +17,6 @@ class ImageServiceProvider implements ServiceProviderInterface {
 		$container['wpemerge_theme.image.image'] = function() {
 			return new Image();
 		};
-
-		$app = $container[ WPEMERGE_APPLICATION_KEY ];
-		$app->alias( 'Theme\\Image', \WPEmergeTheme\Facades\Image::class );
 	}
 
 	/**

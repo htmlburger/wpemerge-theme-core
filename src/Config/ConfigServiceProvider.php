@@ -17,9 +17,6 @@ class ConfigServiceProvider implements ServiceProviderInterface {
 		$container['wpemerge_theme.config.config'] = function() {
 			return new Config();
 		};
-
-		$app = $container[ WPEMERGE_APPLICATION_KEY ];
-		$app->alias( 'Theme\\Config', \WPEmergeTheme\Facades\Config::class );
 	}
 
 	/**

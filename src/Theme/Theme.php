@@ -3,14 +3,6 @@
 namespace WPEmergeTheme\Theme;
 
 use WPEmerge\Application\Application;
-use WPEmerge\Exceptions\ConfigurationException;
-use WPEmergeTheme\Assets\AssetsServiceProvider;
-use WPEmergeTheme\Avatar\AvatarServiceProvider;
-use WPEmergeTheme\Config\ConfigServiceProvider;
-use WPEmergeTheme\Facades\Assets;
-use WPEmergeTheme\Facades\Theme as ThemeFacade;
-use WPEmergeTheme\Image\ImageServiceProvider;
-use WPEmergeTheme\Sidebar\SidebarServiceProvider;
 
 /**
  * Main communication channel with the theme.
@@ -24,43 +16,6 @@ class Theme {
 	protected $app = null;
 
 	/**
-	 * Flag whether the theme has been bootstrapped.
-	 *
-	 * @var boolean
-	 */
-	protected $bootstrapped = false;
-
-	/**
-	 * Array of theme service providers.
-	 *
-	 * @var string[]
-	 */
-	protected $service_providers = [
-		AssetsServiceProvider::class,
-		AvatarServiceProvider::class,
-		ConfigServiceProvider::class,
-		ImageServiceProvider::class,
-		SidebarServiceProvider::class,
-	];
-
-	/**
-	 * Make a new theme instance.
-	 *
-	 * @return self
-	 */
-	public static function make() {
-		$app = Application::make();
-		$theme = new self( $app );
-
-		$container = $app->getContainer();
-		$container['wpemerge_theme'] = $theme;
-
-		$app->alias( 'WPEmergeTheme', ThemeFacade::class );
-
-		return $theme;
-	}
-
-	/**
 	 * Constructor.
 	 *
 	 * @param Application $app
@@ -70,55 +25,48 @@ class Theme {
 	}
 
 	/**
-	 * Get application instance.
+	 * Shortcut to \WPEmergeTheme\Assets\Assets.
 	 *
-	 * @return Application
+	 * @return \WPEmergeTheme\Assets\Assets
 	 */
-	public function getApplication() {
-		return $this->app;
+	public function assets() {
+		return $this->app->resolve( 'wpemerge_theme.assets.assets' );
 	}
 
 	/**
-	 * Get whether the theme has been bootstrapped.
+	 * Shortcut to \WPEmergeTheme\Avatar\Avatar.
 	 *
-	 * @return boolean
+	 * @return \WPEmergeTheme\Avatar\Avatar
 	 */
-	public function isBootstrapped() {
-		return $this->bootstrapped;
+	public function avatar() {
+		return $this->app->resolve( 'wpemerge_theme.avatar.avatar' );
 	}
 
 	/**
-	 * Bootstrap WPEmerge.
+	 * Shortcut to \WPEmergeTheme\Config\Config.
 	 *
-	 * @param  array $config
-	 * @return void
+	 * @return \WPEmergeTheme\Config\Config
 	 */
-	protected function bootstrapApplication( $config ) {
-		if ( ! isset( $config['providers'] ) ) {
-			$config['providers'] = [];
-		}
-
-		$config['providers'] = array_merge(
-			$config['providers'],
-			$this->service_providers
-		);
-
-		$this->getApplication()->bootstrap( $config );
+	public function config() {
+		return $this->app->resolve( 'wpemerge_theme.config.config' );
 	}
 
 	/**
-	 * Bootstrap the theme.
+	 * Shortcut to \WPEmergeTheme\Image\Image.
 	 *
-	 * @param  array $config
-	 * @return void
+	 * @return \WPEmergeTheme\Image\Image
 	 */
-	public function bootstrap( $config = [] ) {
-		if ( $this->isBootstrapped() ) {
-			throw new ConfigurationException( static::class . ' already bootstrapped.' );
-		}
+	public function image() {
+		return $this->app->resolve( 'wpemerge_theme.image.image' );
+	}
 
-		$this->bootstrapped = true;
-		$this->bootstrapApplication( $config );
+	/**
+	 * Shortcut to \WPEmergeTheme\Sidebar\Sidebar.
+	 *
+	 * @return \WPEmergeTheme\Sidebar\Sidebar
+	 */
+	public function sidebar() {
+		return $this->app->resolve( 'wpemerge_theme.sidebar.sidebar' );
 	}
 
 	/**
@@ -145,7 +93,7 @@ class Theme {
 
 		$templates[] = "views/partials/${partial}.php";
 
-		\WPEmerge\render( $templates, $context );
+		$this->app->render( $templates, $context );
 	}
 
 	/**
@@ -155,6 +103,6 @@ class Theme {
 	 * @return string
 	 */
 	public function uri() {
-		return Assets::getThemeUri();
+		return $this->app->resolve( 'wpemerge_theme.assets.assets' )->getThemeUri();
 	}
 }

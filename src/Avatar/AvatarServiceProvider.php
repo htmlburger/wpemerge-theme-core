@@ -17,15 +17,12 @@ class AvatarServiceProvider implements ServiceProviderInterface {
 		$container['wpemerge_theme.avatar.avatar'] = function() {
 			return new Avatar();
 		};
-
-		$app = $container[ WPEMERGE_APPLICATION_KEY ];
-		$app->alias( 'Theme\\Avatar', \WPEmergeTheme\Facades\Avatar::class );
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public function bootstrap( $container ) {
-		\WPEmergeTheme\Facades\Avatar::bootstrap();
+		$container['wpemerge_theme.avatar.avatar']->bootstrap();
 	}
 }

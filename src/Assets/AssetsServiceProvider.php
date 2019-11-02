@@ -21,9 +21,6 @@ class AssetsServiceProvider implements ServiceProviderInterface {
 		$container['wpemerge_theme.assets.assets'] = function( $container ) {
 			return new Assets( $container['wpemerge_theme.assets.manifest'] );
 		};
-
-		$app = $container[ WPEMERGE_APPLICATION_KEY ];
-		$app->alias( 'Theme\\Assets', \WPEmergeTheme\Facades\Assets::class );
 	}
 
 	/**
