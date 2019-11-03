@@ -11,6 +11,8 @@ build:
         - php-scrutinizer-run
 
 filter:
+  excluded_paths:
+    - '_ide_helper.php'
   dependency_paths:
     - wordpress/
 
