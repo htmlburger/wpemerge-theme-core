@@ -34,11 +34,18 @@ trait ReadsJsonTrait {
 	 * @return array
 	 */
 	protected function load( $file ) {
-		if ( ! file_exists( $file ) ) {
+		/** @var \WP_Filesystem_Base $wp_filesystem */
+		global $wp_filesystem;
+
+		require_once ABSPATH . '/wp-admin/includes/file.php';
+
+		WP_Filesystem();
+
+		if ( ! $wp_filesystem->exists( $file ) ) {
 			throw new JsonFileNotFoundException( 'The required ' . basename( $file ) . ' file is missing.' );
 		}
 
-		$contents = file_get_contents( $file );
+		$contents = $wp_filesystem->get_contents( $file );
 		$json = json_decode( $contents, true );
 		$json_error = json_last_error();
 
