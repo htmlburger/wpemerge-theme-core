@@ -27,8 +27,7 @@
 			"WPEmergeTheme\\": "src/"
 		},
         "files": [
-            "config.php",
-            "src/load.php"
+            "config.php"
         ]
 	}
 }
