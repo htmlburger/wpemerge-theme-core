@@ -9,6 +9,8 @@
 
 namespace WPEmergeTheme\Assets;
 
+use WPEmerge\Helpers\MixedType;
+
 class Assets {
 	/**
 	 * Manifest.
@@ -58,21 +60,21 @@ class Assets {
 	 */
 	protected function generateFileVersion( $src ) {
 		// Normalize both URLs in order to avoid problems with http, https
-		// and protocol-less cases
+		// and protocol-less cases.
 		$src = $this->removeProtocol( $src );
-		$home_url = $this->removeProtocol( site_url( '/' ) );
+		$home_url = $this->removeProtocol( WP_CONTENT_URL );
 		$version = false;
 
 		if ( ! $this->isExternalUrl( $src, $home_url ) ) {
-			// Generate the absolute path to the file
-			$file_path = str_replace(
+			// Generate the absolute path to the file.
+			$file_path = MixedType::normalizePath( str_replace(
 				[$home_url, '/'],
-				[ABSPATH, DIRECTORY_SEPARATOR],
+				[WP_CONTENT_DIR, DIRECTORY_SEPARATOR],
 				$src
-			);
+			) );
 
 			if ( file_exists( $file_path ) ) {
-				// Use the last modified time of the file as a version
+				// Use the last modified time of the file as a version.
 				$version = filemtime( $file_path );
 			}
 		}
