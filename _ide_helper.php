@@ -15,7 +15,7 @@ namespace  {
 }
 
 namespace WPEmerge\Application {
-	class Application {
+	class Portal {
 		/**
 		 * Get the theme utilities instance.
 		 *
