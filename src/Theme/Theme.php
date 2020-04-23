@@ -95,10 +95,10 @@ class Theme {
 		$templates = [];
 
 		if ( $child ) {
-			$templates[] = "views/partials/${partial}-${child}.php";
+			$templates[] = "views/partials/${partial}-${child}";
 		}
 
-		$templates[] = "views/partials/${partial}.php";
+		$templates[] = "views/partials/${partial}";
 
 		$this->app->render( $templates, $context );
 	}
