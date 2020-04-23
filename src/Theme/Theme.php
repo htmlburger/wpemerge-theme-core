@@ -77,7 +77,7 @@ class Theme {
 	}
 
 	/**
-	 * Render a template partial using App::render().
+	 * Render a template partial using \App::render().
 	 * Interface matches get_template_part() with the addition of $context.
 	 *
 	 * @param  string $partial
