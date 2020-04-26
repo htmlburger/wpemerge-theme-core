@@ -12,7 +12,7 @@ build:
 
 filter:
   excluded_paths:
-    - '_ide_helper.php'
+    - 'src/Application/PortalMixin.php'
   dependency_paths:
     - wordpress/
 
