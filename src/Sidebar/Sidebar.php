@@ -31,7 +31,7 @@ class Sidebar {
 			$post_id = intval( get_option( 'page_for_posts' ) );
 		}
 
-		$post_id = intval( apply_filters( 'app_sidebar_context_post_id', $post_id ) );
+		$post_id = intval( apply_filters( 'wpemerge_theme_sidebar_context_post_id', $post_id ) );
 
 		return $post_id;
 	}
@@ -43,7 +43,7 @@ class Sidebar {
 	 * @param  string $meta_key Meta key to check for a custom sidebar id.
 	 * @return string
 	 */
-	public function getCurrentSidebarId( $default = 'default-sidebar', $meta_key = '_app_custom_sidebar' ) {
+	public function getCurrentSidebarId( $default = 'default-sidebar', $meta_key = '_custom_sidebar' ) {
 		$post_id = $this->getSidebarPostId();
 		$sidebar = $default;
 
