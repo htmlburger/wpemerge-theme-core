@@ -21,7 +21,7 @@ class Manifest {
 	 * {@inheritDoc}
 	 */
 	protected function getJsonPath() {
-		return APP_DIST_DIR . 'manifest.json';
+		return get_template_directory() . DIRECTORY_SEPARATOR . 'dist' . DIRECTORY_SEPARATOR . 'manifest.json';
 	}
 
 	/**
@@ -33,5 +33,7 @@ class Manifest {
 		} catch ( JsonFileNotFoundException $e ) {
 			// We used to throw an exception here but it just causes confusion for new users.
 		}
+
+		return [];
 	}
 }

@@ -106,7 +106,7 @@ class Assets {
 			return '';
 		}
 
-		return $this->getThemeUri() . '/' . APP_DIST_DIR_NAME . '/' . $path;
+		return $this->getThemeUri() . '/dist/' . $path;
 	}
 
 	/**

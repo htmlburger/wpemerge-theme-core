@@ -20,6 +20,6 @@ class Config {
 	 * {@inheritDoc}
 	 */
 	protected function getJsonPath() {
-		return APP_DIR . 'config.json';
+		return get_template_directory() . DIRECTORY_SEPARATOR . 'config.json';
 	}
 }
