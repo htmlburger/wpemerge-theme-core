@@ -21,7 +21,7 @@ class SidebarServiceProvider implements ServiceProviderInterface {
 	 * {@inheritDoc}
 	 */
 	public function register( $container ) {
-		$container['wpemerge_theme.sidebar.sidebar'] = function() {
+		$container['wpemerge_theme_core.sidebar.sidebar'] = function() {
 			return new Sidebar();
 		};
 	}

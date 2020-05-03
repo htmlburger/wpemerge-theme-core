@@ -21,7 +21,7 @@ class ImageServiceProvider implements ServiceProviderInterface {
 	 * {@inheritDoc}
 	 */
 	public function register( $container ) {
-		$container['wpemerge_theme.image.image'] = function() {
+		$container['wpemerge_theme_core.image.image'] = function() {
 			return new Image();
 		};
 	}

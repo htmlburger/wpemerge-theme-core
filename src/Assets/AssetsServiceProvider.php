@@ -21,12 +21,12 @@ class AssetsServiceProvider implements ServiceProviderInterface {
 	 * {@inheritDoc}
 	 */
 	public function register( $container ) {
-		$container['wpemerge_theme.assets.manifest'] = function() {
+		$container['wpemerge_theme_core.assets.manifest'] = function() {
 			return new Manifest();
 		};
 
-		$container['wpemerge_theme.assets.assets'] = function( $container ) {
-			return new Assets( $container['wpemerge_theme.assets.manifest'] );
+		$container['wpemerge_theme_core.assets.assets'] = function( $container ) {
+			return new Assets( $container['wpemerge_theme_core.assets.manifest'] );
 		};
 	}
 

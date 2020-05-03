@@ -31,7 +31,7 @@ class Sidebar {
 			$post_id = intval( get_option( 'page_for_posts' ) );
 		}
 
-		$post_id = intval( apply_filters( 'wpemerge_theme_sidebar_context_post_id', $post_id ) );
+		$post_id = intval( apply_filters( 'wpemerge_theme_core_sidebar_context_post_id', $post_id ) );
 
 		return $post_id;
 	}

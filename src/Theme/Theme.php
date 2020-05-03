@@ -37,7 +37,7 @@ class Theme {
 	 * @return \WPEmergeThemeCore\Assets\Assets
 	 */
 	public function assets() {
-		return $this->app->resolve( 'wpemerge_theme.assets.assets' );
+		return $this->app->resolve( 'wpemerge_theme_core.assets.assets' );
 	}
 
 	/**
@@ -46,7 +46,7 @@ class Theme {
 	 * @return \WPEmergeThemeCore\Avatar\Avatar
 	 */
 	public function avatar() {
-		return $this->app->resolve( 'wpemerge_theme.avatar.avatar' );
+		return $this->app->resolve( 'wpemerge_theme_core.avatar.avatar' );
 	}
 
 	/**
@@ -55,7 +55,7 @@ class Theme {
 	 * @return \WPEmergeThemeCore\Config\Config
 	 */
 	public function config() {
-		return $this->app->resolve( 'wpemerge_theme.config.config' );
+		return $this->app->resolve( 'wpemerge_theme_core.config.config' );
 	}
 
 	/**
@@ -64,7 +64,7 @@ class Theme {
 	 * @return \WPEmergeThemeCore\Image\Image
 	 */
 	public function image() {
-		return $this->app->resolve( 'wpemerge_theme.image.image' );
+		return $this->app->resolve( 'wpemerge_theme_core.image.image' );
 	}
 
 	/**
@@ -73,7 +73,7 @@ class Theme {
 	 * @return \WPEmergeThemeCore\Sidebar\Sidebar
 	 */
 	public function sidebar() {
-		return $this->app->resolve( 'wpemerge_theme.sidebar.sidebar' );
+		return $this->app->resolve( 'wpemerge_theme_core.sidebar.sidebar' );
 	}
 
 	/**
@@ -110,6 +110,6 @@ class Theme {
 	 * @return string
 	 */
 	public function uri() {
-		return $this->app->resolve( 'wpemerge_theme.assets.assets' )->getThemeUri();
+		return $this->app->resolve( 'wpemerge_theme_core.assets.assets' )->getThemeUri();
 	}
 }

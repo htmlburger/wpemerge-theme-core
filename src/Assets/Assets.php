@@ -146,7 +146,7 @@ class Assets {
 			return;
 		}
 
-		$favicon_uri = apply_filters( 'wpemerge_theme_favicon_uri', $this->getAssetUri( 'images/favicon.ico' ) );
+		$favicon_uri = apply_filters( 'wpemerge_theme_core_favicon_uri', $this->getAssetUri( 'images/favicon.ico' ) );
 
 		echo '<link rel="shortcut icon" href="' . $favicon_uri . '" />' . "\n";
 	}

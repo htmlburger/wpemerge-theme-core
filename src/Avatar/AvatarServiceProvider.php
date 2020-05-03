@@ -21,7 +21,7 @@ class AvatarServiceProvider implements ServiceProviderInterface {
 	 * {@inheritDoc}
 	 */
 	public function register( $container ) {
-		$container['wpemerge_theme.avatar.avatar'] = function() {
+		$container['wpemerge_theme_core.avatar.avatar'] = function() {
 			return new Avatar();
 		};
 	}
@@ -30,6 +30,6 @@ class AvatarServiceProvider implements ServiceProviderInterface {
 	 * {@inheritDoc}
 	 */
 	public function bootstrap( $container ) {
-		$container['wpemerge_theme.avatar.avatar']->bootstrap();
+		$container['wpemerge_theme_core.avatar.avatar']->bootstrap();
 	}
 }
