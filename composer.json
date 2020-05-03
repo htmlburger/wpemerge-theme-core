@@ -1,33 +1,33 @@
 {
-	"name": "htmlburger/wpemerge-theme-core",
-	"description": "Core tools for the WP Emerge Theme.",
-	"type": "library",
-	"keywords": [],
-	"license": "GPL-2.0-only",
-	"homepage": "https://wpemerge.com/",
-	"authors": [
-		{
-			"name": "Atanas Angelov",
-			"email": "atanas.angelov.dev@gmail.com",
-			"homepage": "https://github.com/atanas-angelov-dev/",
-			"role": "Developer"
-		},
-		{
-			"name": "htmlBurger",
-			"email": "info@htmlburger.com",
-			"homepage": "http://htmlburger.com/",
-			"role": "Developer"
-		}
-	],
-	"require": {
-		"htmlburger/wpemerge": "~0.15.0"
-	},
-	"autoload": {
-		"psr-4": {
-			"WPEmergeThemeCore\\": "src/"
-		},
-        "files": [
-            "config.php"
-        ]
-	}
+  "name": "htmlburger/wpemerge-theme-core",
+  "description": "Core tools for the WP Emerge Theme.",
+  "type": "library",
+  "keywords": [],
+  "license": "GPL-2.0-only",
+  "homepage": "https://wpemerge.com/",
+  "authors": [
+    {
+      "name": "Atanas Angelov",
+      "email": "atanas.angelov.dev@gmail.com",
+      "homepage": "https://github.com/atanas-angelov-dev/",
+      "role": "Developer"
+    },
+    {
+      "name": "htmlBurger",
+      "email": "info@htmlburger.com",
+      "homepage": "http://htmlburger.com/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "htmlburger/wpemerge": "~0.15.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "WPEmergeThemeCore\\": "src/"
+    },
+    "files": [
+      "config.php"
+    ]
+  }
 }
