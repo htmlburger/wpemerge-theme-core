@@ -1,15 +1,15 @@
 <?php
 /**
- * @package   WPEmerge
+ * @package   WPEmergeThemeCore
  * @author    Atanas Angelov <hi@atanas.dev>
- * @copyright 2017-2019 Atanas Angelov
+ * @copyright 2017-2020 Atanas Angelov
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0
  * @link      https://wpemerge.com/
  */
 
-namespace WPEmergeTheme\Application;
+namespace WPEmergeThemeCore\Application;
 
-use WPEmergeTheme\Theme\Theme;
+use WPEmergeThemeCore\Theme\Theme;
 
 /**
  * Can be applied to your App class via a "@mixin" annotation for better IDE support.

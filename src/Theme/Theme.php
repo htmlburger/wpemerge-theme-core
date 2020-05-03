@@ -1,13 +1,13 @@
 <?php
 /**
- * @package   WPEmergeTheme
+ * @package   WPEmergeThemeCore
  * @author    Atanas Angelov <hi@atanas.dev>
- * @copyright 2017-2019 Atanas Angelov
+ * @copyright 2017-2020 Atanas Angelov
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0
  * @link      https://wpemerge.com/
  */
 
-namespace WPEmergeTheme\Theme;
+namespace WPEmergeThemeCore\Theme;
 
 use WPEmerge\Application\Application;
 
@@ -32,45 +32,45 @@ class Theme {
 	}
 
 	/**
-	 * Shortcut to \WPEmergeTheme\Assets\Assets.
+	 * Shortcut to \WPEmergeThemeCore\Assets\Assets.
 	 *
-	 * @return \WPEmergeTheme\Assets\Assets
+	 * @return \WPEmergeThemeCore\Assets\Assets
 	 */
 	public function assets() {
 		return $this->app->resolve( 'wpemerge_theme.assets.assets' );
 	}
 
 	/**
-	 * Shortcut to \WPEmergeTheme\Avatar\Avatar.
+	 * Shortcut to \WPEmergeThemeCore\Avatar\Avatar.
 	 *
-	 * @return \WPEmergeTheme\Avatar\Avatar
+	 * @return \WPEmergeThemeCore\Avatar\Avatar
 	 */
 	public function avatar() {
 		return $this->app->resolve( 'wpemerge_theme.avatar.avatar' );
 	}
 
 	/**
-	 * Shortcut to \WPEmergeTheme\Config\Config.
+	 * Shortcut to \WPEmergeThemeCore\Config\Config.
 	 *
-	 * @return \WPEmergeTheme\Config\Config
+	 * @return \WPEmergeThemeCore\Config\Config
 	 */
 	public function config() {
 		return $this->app->resolve( 'wpemerge_theme.config.config' );
 	}
 
 	/**
-	 * Shortcut to \WPEmergeTheme\Image\Image.
+	 * Shortcut to \WPEmergeThemeCore\Image\Image.
 	 *
-	 * @return \WPEmergeTheme\Image\Image
+	 * @return \WPEmergeThemeCore\Image\Image
 	 */
 	public function image() {
 		return $this->app->resolve( 'wpemerge_theme.image.image' );
 	}
 
 	/**
-	 * Shortcut to \WPEmergeTheme\Sidebar\Sidebar.
+	 * Shortcut to \WPEmergeThemeCore\Sidebar\Sidebar.
 	 *
-	 * @return \WPEmergeTheme\Sidebar\Sidebar
+	 * @return \WPEmergeThemeCore\Sidebar\Sidebar
 	 */
 	public function sidebar() {
 		return $this->app->resolve( 'wpemerge_theme.sidebar.sidebar' );
@@ -104,9 +104,9 @@ class Theme {
 	}
 
 	/**
-	 * Alias for WPEmergeTheme\Assets\Assets::getThemeUri().
+	 * Alias for WPEmergeThemeCore\Assets\Assets::getThemeUri().
 	 *
-	 * @see \WPEmergeTheme\Assets\Assets::getThemeUri
+	 * @see \WPEmergeThemeCore\Assets\Assets::getThemeUri
 	 * @return string
 	 */
 	public function uri() {
