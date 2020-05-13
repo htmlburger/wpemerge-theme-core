@@ -75,41 +75,4 @@ class Theme {
 	public function sidebar() {
 		return $this->app->resolve( 'wpemerge_theme_core.sidebar.sidebar' );
 	}
-
-	/**
-	 * Render a template partial using \App::render().
-	 * Interface matches get_template_part() with the addition of $context.
-	 *
-	 * @param  string $partial
-	 * @param  string $child
-	 * @param  array  $context
-	 * @return void
-	 */
-	public function partial( $partial, $child = '', $context = [] ) {
-		if ( is_array( $child ) ) {
-			// Optional argument $child not specified, flip input around.
-			$context = $child;
-			$child = '';
-		}
-
-		$templates = [];
-
-		if ( $child ) {
-			$templates[] = "views/partials/${partial}-${child}";
-		}
-
-		$templates[] = "views/partials/${partial}";
-
-		$this->app->render( $templates, $context );
-	}
-
-	/**
-	 * Alias for WPEmergeThemeCore\Assets\Assets::getThemeUri().
-	 *
-	 * @see \WPEmergeThemeCore\Assets\Assets::getThemeUri
-	 * @return string
-	 */
-	public function uri() {
-		return $this->app->resolve( 'wpemerge_theme_core.assets.assets' )->getThemeUri();
-	}
 }
